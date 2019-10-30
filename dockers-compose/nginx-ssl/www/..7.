@@ -1,0 +1,7 @@
+www:
+    image: nginx
+    restart: always
+    port:
+       - "80:80"
+    volumenes:
+       - www: ~/www:/usr/share/nginx/html:ro

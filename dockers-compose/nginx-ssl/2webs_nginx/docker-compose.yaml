@@ -1,0 +1,32 @@
+ 
+version: '3'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+   
+  www:
+    image: nginx
+    restart: always
+    expose:
+       - "80"
+    volumes:
+       - ../www:/usr/share/nginx/html:ro
+    environment:
+       - VIRTUAL_HOST=gilbarsan.com,www.gilbarsan.com
+
+
+  www2:
+    image: nginx
+    restart: always
+    expose:
+       - "80"
+    volumes:
+       - ../www2:/usr/share/nginx/html:ro
+    environment:
+       - VIRTUAL_HOST=sitio02.com,www.sitio02.com
