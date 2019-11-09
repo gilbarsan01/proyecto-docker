@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
-    restart: always
+    restart: no
     ports:
       - "80:80"
       - "443:443"
@@ -17,7 +17,7 @@ services:
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: always
+    restart: no
     volumes:
       - ../certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -27,7 +27,7 @@ services:
 
   www:
     image: nginx
-    restart: always
+    restart: no
     expose:
       - "80"
     volumes:
