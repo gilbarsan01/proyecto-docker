@@ -1,0 +1,29 @@
+version: "3.2"
+
+services:
+  demo:
+    image: ehazlett/docker-demo
+    deploy:
+      replicas: 1
+      labels:
+        com.docker.lb.hosts: app.example.org
+        com.docker.lb.network: demo-network
+        com.docker.lb.port: 8080
+        com.docker.lb.ssl_cert: demo_app.example.org.cert
+        com.docker.lb.ssl_key: demo_app.example.org.key
+    environment:
+      METADATA: proxy-handles-tls
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    driver: overlay
+secrets:
+  app.example.org.cert:
+    file: ./app.example.org.cert
+  app.example.org.key:
+    file: ./app.example.org.key
+
+
+#https://docs.docker.com/ee/ucp/interlock/usage/tls/
