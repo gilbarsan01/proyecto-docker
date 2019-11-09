@@ -7,7 +7,7 @@ services:
     image: ehazlett/docker-demo
     command: --tls-cert=/run/secrets/cert.pem --tls-key=/run/secrets/key.pem
     deploy:
-      replicas: 1
+      replicas: 2
       labels:
         com.docker.lb.hosts: app.example.org
         com.docker.lb.network: demo-network

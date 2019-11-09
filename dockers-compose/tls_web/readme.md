@@ -38,3 +38,20 @@ gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose
 
 Verificar el contenedor:
 https://172.20.0.3:8080/
+
+
+
+-Detener servicio:
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ docker stack rm demo
+Removing service demo_demo
+Removing secret demo_app.example.org.cert
+Removing secret demo_app.example.org.key
+Removing network demo_demo-network
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$
+
+
+-Se valida   que ya no este corriendo:
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ 
+
