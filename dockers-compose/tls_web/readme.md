@@ -6,6 +6,18 @@ https://docs.docker.com/ee/ucp/interlock/usage/tls/
 Instrucciones:
 
 
+-inicializar proyecto SWARM
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ docker swarm init
+Swarm initialized: current node (kmosjnr7139offm21pq8uk6pk) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2zle55s31599e6dvqeyyi9y19jkgwhwh24n2vrp9l1ibrwau5y-6x9rtvo8k8zsm9g2ik8zjir15 192.168.100.13:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ 
+
 -Levantar contenedor:
 gilbarsan@HP-Pavilion-17-Notebook:~/repos/github/proyecto-docker/dockers-compose/tls_web$ docker stack deploy --compose-file docker-compose.yml demo
 Updating service demo_demo (id: bkia01rdxo8g5fw7s5skr36j1)
